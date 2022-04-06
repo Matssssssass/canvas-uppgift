@@ -19,7 +19,34 @@ console.log(
 Höjd på canvas: ${canvas.height}`
 );
 
-function drawPicture() {
-  // Här skriver du funktionen som ritar bilden
+function rightSideHouse(bredd,höjd) {
+  var yposition = canvas.height-20-höjd
+  var xposition = canvas.width-20-bredd
+  var triangeltopp = canvas.height / 2
+  c.beginPath()
+  c.rect(xposition,yposition,bredd,höjd)
+  c.lineTo(xposition+bredd/2, triangeltopp)
+  
+  c.lineTo(canvas.width-20, yposition)
+  c.stroke()
 }
-drawPicture();
+function leftSideHouse(bredd,höjd){
+  var yposition = canvas.height-20-höjd
+  var xposition = 20
+  var triangeltopp = canvas.height / 2
+  c.beginPath()
+  c.rect(xposition,yposition,bredd,höjd)
+  c.lineTo(xposition+bredd/2, triangeltopp)
+  
+  c.lineTo(bredd+20, yposition)
+  c.stroke()
+}
+
+function tree(bredd){
+  c.beginPath()
+  c.ellipse(canvas.width/2)
+
+}
+
+rightSideHouse(300,100);
+leftSideHouse(300,100);
